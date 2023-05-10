@@ -1,8 +1,5 @@
 import nltk
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem import WordNetLemmatizer
-import re
 from transformers import pipeline
 import numpy as np
 import networkx as nx
@@ -10,11 +7,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, render_template , request
 import os
-import torch
 
 nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
 
 if not os.path.exists('uploads'):
     os.makedirs('uploads')
@@ -37,21 +31,10 @@ def home():
 
         with open(os.path.join(UPLOAD_FOLDER, filename), 'r', encoding='ISO-8859-1') as file:
             text = file.read()
-        # Define the NLTK objects
-        stop_words = set(stopwords.words('english'))
-        lemmatizer = WordNetLemmatizer()
-
-        # # Remove HTML tags
-        # text = re.sub('<[^<]+?>', '', text)
-        # # Remove special characters
-        # text = re.sub('[^a-zA-Z0-9 \n\.]', '', text)
+     
 
         # Tokenize the text
         tokens = word_tokenize(text)
-        # # Remove stop words
-        # tokens = [token for token in tokens if token not in stop_words]
-        # # Lemmatize the tokens
-        # tokens = [lemmatizer.lemmatize(token) for token in tokens]
         # Join the tokens back into a string
         text = ' '.join(tokens)
 
