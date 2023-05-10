@@ -62,26 +62,26 @@ def home():
         # Tokenize the summary into sentences
         sentences = sent_tokenize(summary)
 
-        # # Create a similarity matrix using cosine similarity
-        # vectorizer = TfidfVectorizer()
-        # vectors = vectorizer.fit_transform(sentences)
-        # similarity_matrix = cosine_similarity(vectors)
+        # Create a similarity matrix using cosine similarity
+        vectorizer = TfidfVectorizer()
+        vectors = vectorizer.fit_transform(sentences)
+        similarity_matrix = cosine_similarity(vectors)
 
-        # # Convert the similarity matrix to a graph using NetworkX
-        # graph = nx.from_numpy_array(similarity_matrix)
+        # Convert the similarity matrix to a graph using NetworkX
+        graph = nx.from_numpy_array(similarity_matrix)
 
-        # # Apply the PageRank algorithm to get the sentence scores
-        # scores = nx.pagerank(graph)
+        # Apply the PageRank algorithm to get the sentence scores
+        scores = nx.pagerank(graph)
 
-        # # Sort the sentences based on their scores to get the summary
-        # sorted_sentences = sorted(scores, key=lambda x: sentences.index(x) if x in sentences else -1)
-        # num_sentences = len(sorted_sentences)
-        # summary_sentences = sorted_sentences[:num_sentences]
-        # final_summary = ' '.join([sentences[idx] for idx in summary_sentences])
+        # Sort the sentences based on their scores to get the summary
+        sorted_sentences = sorted(scores, key=lambda x: sentences.index(x) if x in sentences else -1)
+        num_sentences = len(sorted_sentences)
+        summary_sentences = sorted_sentences[:num_sentences]
+        final_summary = ' '.join([sentences[idx] for idx in summary_sentences])
 
    
 
-        return render_template('home.html', result=summary)
+        return render_template('home.html', result=final_summary)
         
         
 
