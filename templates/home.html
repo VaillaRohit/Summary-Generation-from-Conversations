@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Summarization</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body >
+	
+	<h1></h1>
+
+	<form method="POST" action="/" enctype="multipart/form-data">
+		<label for="file">Upload File: Only .txt</label><br>
+		<input type="file" id="file" name="file"><br><br>
+		<input type="submit" value="Summarize Text"><br><br>
+	</form>
+
+	{% if result %}
+		<h2>Summary:</h2>
+		<p>{{ result }}</p>
+	{% endif %}
+</body>
+</html>

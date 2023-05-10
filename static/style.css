@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-image: url('https://miro.medium.com/v2/resize:fit:720/format:webp/1*RicNjuDdHuy7xErRy5YC9A.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+form {
+  
+  width: 30%;
+  margin: 0;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1d1c1b;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  color: rgb(255,253,208);
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgba(106, 231, 247, 0.644);
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2E8B57;
+}
+
+h2 {
+  
+  font-size: 24px;
+  color: rgb(16, 252, 86);
+}
+
+p {
+  padding: 10px;
+  background-color: rgb(255,253,208);
+  border-radius: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #292323;
+}
